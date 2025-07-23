@@ -68,7 +68,7 @@ layout_eda = dbc.Container([
 
     dbc.Row([
         dbc.Col(dbc.Card([
-            dbc.CardHeader("Species Word Cloud by Country"),
+            dbc.CardHeader("Resistant Species Word Cloud by Country"),
             dbc.CardBody([
                 dcc.Dropdown(
                     id="wordcloud-country",
