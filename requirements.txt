@@ -1,0 +1,23 @@
+# Core app dependencies
+dash==2.16.1
+dash-bootstrap-components==1.5.0
+flask==2.3.3
+gunicorn==21.2.0
+
+# Data handling
+pandas==2.2.2
+numpy==1.26.4
+
+# Visualization
+plotly==5.22.0
+matplotlib==3.8.4
+seaborn==0.13.2
+wordcloud==1.9.3
+
+# Machine Learning (if needed later)
+scikit-learn==1.4.2
+xgboost==2.0.3
+imbalanced-learn==0.12.2
+
+# Misc
+joblib==1.4.2
