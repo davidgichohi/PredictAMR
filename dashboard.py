@@ -55,14 +55,7 @@ layout_eda = dbc.Container([
 
         dbc.Col(dbc.Card([
             dbc.CardHeader("Top 10 African Countries by Reported Isolates"),
-            dbc.CardBody([
-                dcc.Dropdown(
-                    id="country-dropdown",
-                    options=[{"label": c, "value": c} for c in sorted(df['Country'].dropna().unique())],
-                    value="Kenya"
-                ),
-                dcc.Graph(id="country-plot")
-            ])
+            dbc.CardBody(dcc.Graph(figure=plot_top_countries()))
         ]), md=6)
     ], className="mb-4"),
 
@@ -146,10 +139,6 @@ def register_callbacks(app):
     @app.callback(Output('page-content', 'children'), Input('url', 'pathname'))
     def display_page(pathname):
         return get_page_layout(pathname)
-
-    @app.callback(Output("country-plot", "figure"), Input("country-dropdown", "value"))
-    def update_country_plot(country):
-        return plot_top_countries()
 
     @app.callback(Output("wordcloud-output", "children"), Input("wordcloud-country", "value"))
     def update_wordcloud(country):
